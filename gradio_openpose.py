@@ -18,7 +18,7 @@ from cldm.ddim_hacked import DDIMSampler
 preprocessor = None
 
 model_name = 'control_v11p_sd15_openpose'
-model = create_model(f'./content/{model_name}.yaml').cpu()
+model = create_model(f'./model/{model_name}.yaml').cpu()
 model.load_state_dict(load_state_dict('./content/test.safetensors', location='cuda'), strict=False)
 model.load_state_dict(load_state_dict(f'./content/{model_name}.pth', location='cuda'), strict=False)
 model = model.cuda()
